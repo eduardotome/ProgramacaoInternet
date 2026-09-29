@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5B - Responsivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #e9e7e8;
+            padding: 15px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 2fr 0.5fr;
+            grid-template-rows: 100px 100px 70px;
+            gap: 10px;
+            grid-template-areas: 
+                "box1 box3 box4 circulos"
+                "box2 box3 box5 circulos"
+                "box6 box6 box5 circulos";
+        }
+
+        .box {
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .box-1 { grid-area: box1; background-color: #f69c26; }
+        .box-2 { grid-area: box2; background-color: #b0c4de; }
+        .box-3 { grid-area: box3; background-color: #f7b9a5; }
+        .box-4 { grid-area: box4; background-color: #c9dede; }
+        .box-5 { grid-area: box5; background-color: #b5c772; }
+        .box-6 { grid-area: box6; background-color: #f9b83e; }
+
+        .circulos {
+            grid-area: circulos;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .circulo {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .c1 { background-color: #f68b5a; }
+        .c2 { background-color: #d1b1b1; }
+        .c3 { background-color: #c7d1af; }
+        .c4 { background-color: #cfbce3; }
+
+        /* REGRA DO 5B: Adaptação para telas menores que 600px */
+        @media (max-width: 600px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .box {
+                height: 60px;
+                width: 100%;
+            }
+
+            .circulos {
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 10px 0;
+            }
+
+            .circulo {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="#web" class="box box-1">WEB</a>
+        <a href="#html" class="box box-2">HTML</a>
+        <a href="#css" class="box box-3">CSS</a>
+        <a href="#animate" class="box box-4">Animate</a>
+        <a href="#position" class="box box-5">Position</a>
+        <a href="#flex" class="box box-6">Flex</a>
+
+        <div class="circulos">
+            <a href="#grid" class="circulo c1">Grid</a>
+            <div class="circulo c2"></div>
+            <div class="circulo c3"></div>
+            <div class="circulo c4"></div>
+        </div>
+    </div>
+
+</body>
+</html>

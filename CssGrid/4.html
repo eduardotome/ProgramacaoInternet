@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 - Layout Responsivo com Media Screen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header { background-color: #f1b300; height: 50px; display: flex; align-items: center; justify-content: center; }
+        .banner { background-color: #e53935; height: 50px; display: flex; align-items: center; justify-content: center; color: black; }
+        .left-aside { background-color: #1b5e20; color: black; display: flex; align-items: center; justify-content: center; }
+        .right-aside { background-color: #f1b300; display: flex; align-items: center; justify-content: center; }
+        .main-content { background-color: #4285f4; color: black; min-height: 400px; display: flex; align-items: center; justify-content: center; }
+        .low-content { background-color: #1b5e20; height: 50px; color: black; display: flex; align-items: center; justify-content: center; }
+        .footer { background-color: #4285f4; height: 40px; color: black; display: flex; align-items: center; justify-content: center; }
+
+        .corpo-medio {
+            display: flex;
+            gap: 8px;
+        }
+
+        .left-aside {
+            width: 15%;
+        }
+
+        .centro {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .right-aside {
+            width: 15%;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .corpo-medio {
+                flex-direction: column;
+            }
+
+            .left-aside, .centro, .right-aside {
+                width: 100%;
+            }
+
+            .left-aside {
+                height: 50px;
+            }
+
+            .left-aside { order: 1; }
+            .centro { order: 2; }
+            .right-aside { order: 3; height: 50px; }
+            
+            .banner { order: 1; }
+            .main-content { order: 2; }
+            .low-content { order: 3; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">Header</div>
+
+        <div class="corpo-medio">
+            <div class="left-aside">Left Aside</div>
+
+            <div class="centro">
+                <div class="banner">Banner</div>
+                <div class="main-content">Main Content</div>
+                <div class="low-content">Low Content</div>
+            </div>
+
+            <div class="right-aside">Right Aside</div>
+        </div>
+
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>

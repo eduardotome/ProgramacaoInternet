@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - Layout Viewport</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh; 
+            display: flex;
+        }
+
+        nav {
+            width: 200px;
+            background-color: #a8a379; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .lado-direito {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            height: 80px;
+            background-color: #e64a75; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        main {
+            flex: 1; 
+            background-color: #e5a880; 
+            padding: 20px;
+        }
+
+        main h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .caixa-imagem {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            height: 60px;
+            background-color: #69a38f; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        Nav
+    </nav>
+
+    <div class="lado-direito">
+        <header>
+            Header
+        </header>
+
+        <main>
+            <h2>Content</h2>
+            <div class="caixa-imagem"></div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </main>
+
+        <footer>
+            Footer
+        </footer>
+    </div>
+
+</body>
+</html>

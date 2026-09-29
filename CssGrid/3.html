@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3 - Layout Grid Completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh; 
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container-principal {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 150px 300px;
+            gap: 15px;
+        }
+
+        .topo-esquerdo {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .topo-direito {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .bloco-b {
+            width: 35%;
+        }
+
+        .bloco-escuro {
+            background-color: #424242;
+            color: white;
+            border-radius: 8px;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .bloco-container-grid {
+            background-color: #424242;
+            border-radius: 8px;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .bloco-claro {
+            background-color: #cccccc;
+            color: #333333;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-principal">
+        
+        <div class="topo-esquerdo">
+            <div class="bloco-escuro">A</div>
+        </div>
+
+        <div class="topo-direito">
+            <div class="bloco-escuro bloco-b">B</div>
+        </div>
+
+        <div class="bloco-escuro">C</div>
+
+        <div class="bloco-container-grid">
+            <div class="bloco-claro">E</div>
+            <div class="bloco-claro">F</div>
+            <div class="bloco-claro">G</div>
+            <div class="bloco-claro">M</div>
+            <div class="bloco-claro">I</div>
+            <div class="bloco-claro">J</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
