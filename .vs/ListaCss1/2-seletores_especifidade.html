@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 2 - Especificidade de Seletores CSS</title>
+</head>
+<body>
+    <h1>Atividade 2 – Especificidade seletores CSS</h1>
+    <p><strong>Arquivo:</strong> 2-seletores_especificidade.html</p>
+
+    <h2>Explicação da aplicação das regras:</h2>
+    <ul>
+        <li><strong>Item 1 (Abacaxi):</strong> Fica <strong>vermelho</strong> (red). Aplica a <strong>Regra 1</strong> (<code>li</code>), pois é o único seletor de elemento que pega essa tag e ela não tem classes ou IDs aplicados.</li>
+        
+        <li><strong>Item 2 (Melão):</strong> Fica <strong>cinza</strong> (gray). Aplica a <strong>Regra 3</strong> (<code>.fruta</code>), pois seletores de classe têm maior especificidade que seletores de tag simples (<code>li</code>).</li>
+        
+        <li><strong>Item 3 (Pera):</strong> Fica <strong>azul</strong> (blue). Aplica a <strong>Regra 6</strong> (<code>#lip2</code>), pois o seletor por ID tem especificidade maior do que seletores de classe ou tag.</li>
+        
+        <li><strong>Item 4 (Uva):</strong> Fica <strong>laranja</strong> (orange). Aplica a <strong>Regra 7</strong> (<code>#lip3.fruta</code>), pois combina ID + classe, sendo mais específica do que a Regra 6 (que usa apenas ID).</li>
+        
+        <li><strong>Item 5 (Maçã):</strong> Fica <strong>cinza</strong> (gray). Aplica a <strong>Regra 3</strong> (<code>.fruta</code>), pois não existe nenhuma regra com o ID <code>#lip4</code>.</li>
+        
+        <li><strong>Item 6 (Carne):</strong> Fica <strong>preto</strong> (black). Aplica a <strong>Regra 4</strong> (<code>li+li.churras</code>), pois combina elemento + irmão adjacente + classe, superando a Regra 2 (que tem apenas a classe <code>.churras</code>).</li>
+        
+        <li><strong>Item 7 (Linguiça):</strong> Fica <strong>preto</strong> (black). Aplica a <strong>Regra 4</strong> (<code>li+li.churras</code>) pelo mesmo motivo do Item 6 (especificidade maior que a Regra 2).</li>
+        
+        <li><strong>Item 8 (Pão de alho):</strong> Fica <strong>magenta</strong> (magenta). Aplica a <strong>Regra 5</strong> (<code>.churras[draggable="true"]</code>), pois combina classe + atributo, superando a Regra 4. <em>(A Regra 8 não é aplicada porque busca o id <code>#lip5</code>, mas o ID deste item é <code>#lip7</code>).</em></li>
+    </ul>
+</body>
+</html>

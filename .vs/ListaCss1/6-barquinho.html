@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Animação Barquinho</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(#87ceeb, #e0f7fa);
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Nuvem */
+        .nuvem {
+            width: 140px;
+            height: 40px;
+            background: white;
+            border-radius: 40px;
+            box-shadow: 25px -10px 0 5px white;
+            position: absolute;
+            top: 60px;
+            animation: moverNuvem 14s linear infinite;
+        }
+
+        @keyframes moverNuvem {
+            0% { left: -180px; }
+            100% { left: 100vw; }
+        }
+
+        .barco {
+            width: 100px;
+            height: 100px;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M15 60 L85 60 L72 82 L28 82 Z' fill='%238B4513' stroke='black' stroke-width='2'/><path d='M50 15 L50 58 L82 58 Z' fill='%23ffffff' stroke='black' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='60' stroke='black' stroke-width='3'/></svg>");
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: 125px; 
+            z-index: 10;   
+            animation: moverBarco 9s linear infinite, balanco 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes moverBarco {
+            0% { left: -100px; }
+            100% { left: 100vw; }
+        }
+
+        @keyframes balanco {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        .mar {
+            width: 100%;
+            height: 130px;
+            background-color: #0066cc;
+            position: absolute;
+            bottom: 0;
+            z-index: 1; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nuvem"></div>
+    <div class="barco"></div>
+    <div class="mar"></div>
+
+</body>
+</html>

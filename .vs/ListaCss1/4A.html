@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>4a-display</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .box {
+            display: block;
+            min-height: 80px;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+        }
+        .box1 { background-color: blueviolet; }
+        .box2 { background-color: green; }
+        .box3 { background-color: red; }
+        .box4 { background-color: yellow; color: black; }
+
+        .explicacao {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            margin: 20px;
+            border-left: 5px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+
+    <div class="explicacao">
+        <h2>Por que a exibição é assim?</h2>
+        <p>Por padrão, elementos <code>&lt;div&gt;</code> têm a propriedade <code>display: block</code>. Elementos em bloco ocupam 100% da largura disponível da tela e iniciam em uma nova linha, fazendo com que as caixas fiquem empilhadas verticalmente uma abaixo da outra.</p>
+    </div>
+</body>
+</html>

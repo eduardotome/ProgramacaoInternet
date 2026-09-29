@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>4c-display</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            font-family: sans-serif;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            padding: 5px;
+            box-sizing: border-box;
+            color: black;
+            font-weight: bold;
+        }
+        .box1 { background-color: red; top: 0; left: 0; }
+        .box2 { background-color: yellow; top: 0; right: 0; }
+        .box3 { background-color: green; bottom: 0; right: 0; }
+        .box4 { background-color: blue; bottom: 0; left: 0; color: white; }
+        .box5 {
+            background-color: magenta;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .explicacao {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 80px);
+            width: 300px;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ccc;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <div class="box box5">box5</div>
+
+    <div class="explicacao">
+        <h3>Por que a exibição é assim?</h3>
+        <p>O layout utiliza <code>position: absolute</code> em cada uma das caixas com relação ao container principal (<code>body</code>). Isso retira as caixas do fluxo normal e permite posicioná-las nos cantos usando <code>top</code>, <code>bottom</code>, <code>left</code> e <code>right</code>. A <code>box5</code> fica no centro exato usando <code>top: 50%</code>, <code>left: 50%</code> e <code>transform: translate(-50%, -50%)</code>.</p>
+    </div>
+</body>
+</html>
