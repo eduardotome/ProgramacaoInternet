@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabalho sobre Protocolo HTTP</title>
+</head> <link rel="stylesheet" href="estilo.css">
+<body>
+
+    <h1>O que é o Protocolo HTTP?</h1>
+    <p>O HTTP (Hypertext Transfer Protocol) é o protocolo utilizado na Web para permitir a comunicação e a transferência de dados entre o navegador do cliente e o servidor onde os sites estão hospedados.</p>
+
+    <h2>Como o HTTP é usado na Web</h2>
+    <p>A navegação na Web funciona no modelo cliente-servidor. Quando você acessa um site, o seu navegador envia um pedido (requisição) para o servidor, e o servidor responde enviando de volta o conteúdo da página.</p>
+
+    <p>Imagem ilustrando a comunicação entre cliente e servidor:</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/HTTP_request_response.svg/640px-HTTP_request_response.svg.png" alt="Comunicação HTTP entre Cliente e Servidor" width="450">
+
+    <hr>
+
+    <h2>Detalhes de uma Requisição (Request)</h2>
+    <p>Exemplo de uma requisição HTTP enviada pelo navegador:</p>
+    <pre>
+GET /produtos/notebook.html HTTP/1.1
+Host: www.lojaexemplo.com.br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+Accept: text/html,application/xhtml+xml
+Accept-Language: pt-BR,pt;q=0.9
+    </pre>
+
+    <h3>Descrição dos Campos da Requisição:</h3>
+    <ul>
+        <li><b>Método (GET):</b> Indica a ação desejada, que neste caso é buscar e ler um recurso do servidor.</li>
+        <li><b>Caminho (/produtos/notebook.html):</b> O arquivo ou página específica solicitada dentro do servidor.</li>
+        <li><b>Versão do Protocolo (HTTP/1.1):</b> A versão das regras do HTTP que o navegador está utilizando.</li>
+        <li><b>Host (www.lojaexemplo.com.br):</b> O endereço do servidor de destino para onde o pedido está sendo enviado.</li>
+        <li><b>User-Agent:</b> Informações sobre o navegador, sistema operacional e dispositivo do usuário.</li>
+        <li><b>Accept:</b> Tipos de formatos de arquivo que o navegador consegue receber e processar.</li>
+        <li><b>Accept-Language:</b> Idioma preferido do usuário para a exibição do conteúdo.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Detalhes de uma Resposta (Response)</h2>
+    <p>Exemplo de uma resposta devolvida pelo servidor:</p>
+    <pre>
+HTTP/1.1 200 OK
+Date: Tue, 29 Sep 2026 14:30:00 GMT
+Server: Apache/2.4.52
+Content-Type: text/html; charset=UTF-8
+Content-Length: 150
+
+&lt;html&gt;
+  &lt;body&gt;&lt;h1&gt;Notebook Gamer&lt;/h1&gt;&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h3>Descrição dos Campos da Resposta:</h3>
+    <ul>
+        <li><b>Código de Status (200 OK):</b> Indica que a requisição deu certo e a página foi encontrada sem erros.</li>
+        <li><b>Date:</b> A data e a hora exatas em que a resposta foi gerada pelo servidor.</li>
+        <li><b>Server:</b> Nome e versão do programa do servidor web que respondeu o pedido.</li>
+        <li><b>Content-Type:</b> O tipo do arquivo retornado e sua codificação (neste caso, HTML em UTF-8).</li>
+        <li><b>Content-Length:</b> O tamanho do conteúdo do corpo da resposta medido em bytes.</li>
+        <li><b>Corpo (Body):</b> O conteúdo real do arquivo solicitado que será renderizado na tela.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Outro Exemplo: Requisição POST</h2>
+    <p>Utilizada quando o cliente envia dados para o servidor, como em um formulário de login:</p>
+    <pre>
+POST /login HTTP/1.1
+Host: www.lojaexemplo.com.br
+Content-Type: application/x-www-form-urlencoded
+
+usuario=eduardo&senha=123456
+    </pre>
+
+</body>
+</html>

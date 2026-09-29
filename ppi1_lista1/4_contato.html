@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Contato</title>
+</head> <link rel="stylesheet" href="estilo.css">
+<body>
+
+    <p><a href="3_curriculo.html">Voltar para o Currículo</a></p>
+
+    <h1>Contato</h1>
+    <p>Preencha os campos abaixo para entrar em contato. Os campos com nome e e-mail são obrigatórios.</p>
+
+    <form>
+        <p>
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+        </p>
+
+        <p>
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </p>
+
+        <p>
+            <label for="assunto">Assunto:</label><br>
+            <input type="text" id="assunto" name="assunto" placeholder="Digite o assunto da mensagem">
+        </p>
+
+        <p>
+            <label for="estado">Estado:</label><br>
+            <select id="estado" name="estado">
+                <option value="">Selecione seu estado</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="SC">Santa Catarina</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui"></textarea>
+        </p>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+</html>
