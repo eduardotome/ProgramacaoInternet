@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria Flexbox - Times de Futebol</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .galeria {
+            display: flex;
+            gap: 15px;
+            width: 900px;
+            height: 450px;
+        }
+
+        .card {
+            position: relative;
+            flex: 1; 
+            border-radius: 30px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            transition: flex 0.4s ease;
+        }
+
+        .card.ativo {
+            flex: 4;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        }
+
+        .conteudo {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icone {
+            width: 35px;
+            height: 35px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .texto {
+            color: white;
+            display: none; 
+        }
+
+        .card.ativo .texto {
+            display: block; 
+        }
+
+        .texto h4 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .texto p {
+            margin: 2px 0 0 0;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="galeria">
+        
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800');">
+            <div class="conteudo">
+                <div class="icone">⚽</div>
+            </div>
+        </div>
+
+        <div class="card ativo" style="background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800');">
+            <div class="conteudo">
+                <div class="icone">🔴</div>
+                <div class="texto">
+                    <h4>Real Madrid</h4>
+                    <p>Santiago Bernabéu - Espanha</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800');">
+            <div class="conteudo">
+                <div class="icone">🏆</div>
+            </div>
+        </div>
+
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=800');">
+            <div class="conteudo">
+                <div class="icone">🟢</div>
+            </div>
+        </div>
+
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800');">
+            <div class="conteudo">
+                <div class="icone">⭐</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

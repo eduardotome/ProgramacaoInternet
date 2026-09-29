@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6B - Layout Responsivo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #e9e7e8;
+            padding: 15px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 2fr 0.5fr;
+            grid-template-rows: 100px 100px 70px;
+            gap: 10px;
+            grid-template-areas: 
+                "box1 box3 box4 circulos"
+                "box2 box3 box5 circulos"
+                "box6 box6 box5 circulos";
+        }
+
+        .box-1 { grid-area: box1; background-color: #f69c26; }
+        .box-2 { grid-area: box2; background-color: #b0c4de; }
+        .box-3 { grid-area: box3; background-color: #f7b9a5; }
+        .box-4 { grid-area: box4; background-color: #c9dede; }
+        .box-5 { grid-area: box5; background-color: #b5c772; }
+        .box-6 { grid-area: box6; background-color: #f9b83e; }
+
+        .box {
+            border-radius: 4px;
+        }
+
+        .circulos {
+            grid-area: circulos;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .circulo {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .c1 { background-color: #f68b5a; }
+        .c2 { background-color: #d1b1b1; }
+        .c3 { background-color: #c7d1af; }
+        .c4 { background-color: #cfbce3; }
+
+        @media (max-width: 600px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .box {
+                height: 70px;
+                width: 100%;
+            }
+
+            .circulos {
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 10px 0;
+            }
+
+            .circulo {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box box-1"></div>
+        <div class="box box-2"></div>
+        <div class="box box-3"></div>
+        <div class="box box-4"></div>
+        <div class="box box-5"></div>
+        <div class="box box-6"></div>
+
+        <div class="circulos">
+            <div class="circulo c1"></div>
+            <div class="circulo c2"></div>
+            <div class="circulo c3"></div>
+            <div class="circulo c4"></div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resolução Flexbox Froggy - Níveis 15 e 16</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 30px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2e7d32;
+            border-bottom: 2px solid #2e7d32;
+            padding-bottom: 10px;
+        }
+        .nivel {
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-left: 5px solid #2e7d32;
+        }
+        code {
+            background-color: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Solução Flexbox Froggy (Níveis 15 e 16)</h1>
+
+        <div class="nivel">
+            <h2>Nível 15</h2>
+            <p><strong>Código da solução:</strong></p>
+            <p><code>order: 1;</code> (ou qualquer valor maior que 0, como <code>order: 3;</code>)</p>
+            
+            <h3>Explicação das propriedades e efeitos:</h3>
+            <ul>
+                <li>
+                    <strong>Propriedade <code>order</code>:</strong> Define a ordem visual de exibição de um item flex dentro do contêiner flexbox. Por padrão, todos os elementos têm o valor <code>order: 0</code>.
+                </li>
+                <li>
+                    <strong>Efeito aplicado:</strong> Ao aplicar <code>order: 1;</code> na classe <code>.red</code>, o sapo vermelho passa a ter um valor de ordem maior que os sapos verdes (que possuem 0). Isso faz com que ele saia da primeira posição e vá para a última posição à direita, alinhando-se com a sua vitória-régia vermelha.
+                </li>
+            </ul>
+        </div>
+
+        <div class="nivel">
+            <h2>Nível 16</h2>
+            <p><strong>Código da solução:</strong></p>
+            <p><code>order: -1;</code></p>
+            
+            <h3>Explicação das propriedades e efeitos:</h3>
+            <ul>
+                <li>
+                    <strong>Propriedade <code>order</code> com valor negativo:</strong> Permite mover um item específico para trás na ordem de exibição em relação aos itens padrão.
+                </li>
+                <li>
+                    <strong>Efeito aplicado:</strong> Como todos os itens possuem <code>order: 0</code> por padrão, ao definir <code>order: -1;</code> no elemento selecionado (no caso, o sapo amarelo <code>.yellow</code>), ele passa a ter um número menor que todos os outros, sendo movido imediatamente para a primeira posição (extrema esquerda).
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
