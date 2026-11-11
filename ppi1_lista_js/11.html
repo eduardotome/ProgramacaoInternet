@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
+    <style>
+        #hoverDiv {
+            width: 200px;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+  <button id="alertButton">Clique aqui</button>
+  <input type="text" id="textInput" placeholder="Digite algo">
+  <div id="hoverDiv">Passe o mouse aqui</div>
+  <select id="colorSelect">
+    <option value="">Escolha uma cor</option>
+    <option value="blue">Azul</option>
+    <option value="green">Verde</option>
+    <option value="red">Vermelho</option>
+  </select>
+
+<script>
+var botao = document.getElementById("alertButton");
+var input = document.getElementById("textInput");
+var div = document.getElementById("hoverDiv");
+var select = document.getElementById("colorSelect");
+
+botao.addEventListener("click", function() {
+    alert("Voce clicou no botao!");
+});
+
+input.addEventListener("keydown", function(e) {
+    console.log(e.key);
+});
+
+input.addEventListener("focus", function() {
+    input.style.backgroundColor = "yellow";
+});
+
+input.addEventListener("blur", function() {
+    input.style.backgroundColor = "";
+});
+
+div.addEventListener("mouseover", function() {
+    div.style.backgroundColor = "orange";
+});
+
+div.addEventListener("mouseout", function() {
+    div.style.backgroundColor = "lightgray";
+});
+
+select.addEventListener("change", function() {
+    document.body.style.backgroundColor = select.value;
+});
+</script>
+</body>
+</html>
