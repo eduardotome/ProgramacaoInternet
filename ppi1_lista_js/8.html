@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cor de fundo</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #4aa0dc;
+            font-family: Arial;
+        }
+        button {
+            font-size: 20px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="mudarCor()">Alterar Cor de Fundo</button>
+    <p id="cor" onclick="copiar()">#4aa0dc</p>
+
+<script>
+function mudarCor() {
+    var letras = "0123456789ABCDEF";
+    var cor = "#";
+    for (var i = 0; i < 6; i++) {
+        cor = cor + letras[Math.floor(Math.random() * 16)];
+    }
+    document.body.style.backgroundColor = cor;
+    document.getElementById("cor").innerHTML = cor;
+}
+
+function copiar() {
+    var texto = document.getElementById("cor").innerHTML;
+    navigator.clipboard.writeText(texto);
+    alert("Cor copiada: " + texto);
+}
+</script>
+</body>
+</html>
