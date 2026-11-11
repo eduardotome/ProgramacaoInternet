@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Numeros Primos</title>
+</head>
+<body>
+    <h1>Numeros primos</h1>
+
+    Inicio: <input type="number" id="inicio">
+    Fim: <input type="number" id="fim">
+    <button onclick="verificar()">Verificar</button>
+
+    <div id="resultadoPrimos"></div>
+
+<script>
+function ehPrimo(n) {
+    if (n < 2) {
+        return false;
+    }
+    for (let i = 2; i < n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function verificar() {
+    let inicio = parseInt(document.getElementById("inicio").value);
+    let fim = parseInt(document.getElementById("fim").value);
+
+    if (isNaN(inicio) || isNaN(fim)) {
+        document.getElementById("resultadoPrimos").innerHTML = "Digite os dois numeros!";
+        return;
+    }
+
+    if (inicio > fim) {
+        let aux = inicio;
+        inicio = fim;
+        fim = aux;
+    }
+
+    let primos = [];
+    for (let i = inicio; i <= fim; i++) {
+        if (ehPrimo(i) == true) {
+            primos.push(i);
+        }
+    }
+
+    if (primos.length == 0) {
+        document.getElementById("resultadoPrimos").innerHTML = "Nenhum primo nesse intervalo";
+    } else {
+        document.getElementById("resultadoPrimos").innerHTML = "Primos: " + primos.join(", ");
+    }
+}
+</script>
+</body>
+</html>
