@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Storage</title>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="Digite seu nome">
+    <button id="saveButton">Salvar</button>
+    <p id="greeting"></p>
+
+<script>
+let nomeSalvo = localStorage.getItem("nome")
+if (nomeSalvo != null) {
+    document.getElementById("greeting").innerHTML = "Ola, " + nomeSalvo + "!"
+}
+
+document.getElementById("saveButton").addEventListener("click", function() {
+    let nome = document.getElementById("nameInput").value
+    if (nome == "") {
+        alert("Digite um nome")
+    } else {
+        localStorage.setItem("nome", nome)
+        document.getElementById("greeting").innerHTML = "Ola, " + nome + "!"
+    }
+})
+</script>
+</body>
+</html>
