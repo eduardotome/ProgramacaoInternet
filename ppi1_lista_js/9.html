@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cores com espaço</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+        header {
+            background-color: #05668D;
+            color: white;
+            padding: 20px;
+        }
+        nav {
+            background-color: #427AA1;
+            padding: 10px;
+        }
+        main {
+            background-color: #EBF2FA;
+            padding: 20px;
+            height: 300px;
+        }
+        aside {
+            background-color: #679436;
+            padding: 10px;
+        }
+        footer {
+            background-color: #A5BE00;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+    <nav>Inicio | Sobre | Contato</nav>
+    <main>
+        <p>Aperte a tecla espaço pra mudar as cores!</p>
+    </main>
+    <aside>Barra lateral</aside>
+    <footer>Rodape - 2025</footer>
+
+<script>
+function corAleatoria() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.code == "Space") {
+        e.preventDefault();
+        document.querySelector("header").style.backgroundColor = corAleatoria();
+        document.querySelector("nav").style.backgroundColor = corAleatoria();
+        document.querySelector("main").style.backgroundColor = corAleatoria();
+        document.querySelector("aside").style.backgroundColor = corAleatoria();
+        document.querySelector("footer").style.backgroundColor = corAleatoria();
+    }
+})
+</script>
+</body>
+</html>
