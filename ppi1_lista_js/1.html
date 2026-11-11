@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title id="titulo">O que é JavaScript?</title>
+</head>
+<body id="corpo">
+    <h1 id="pergunta">O que é JavaScript?</h1>
+
+    <p id="motivacao">O JavaScript foi criado em 1995 pela Netscape pra deixar as paginas da internet mais dinamicas, porque antes elas eram só HTML parado e não dava pra fazer nada sem mandar pro servidor.</p>
+
+    <p id="navegadorservidor">No navegador o JavaScript roda no computador do usuario e mexe na pagina (o DOM). No servidor (com o Node.js por exemplo) ele roda na maquina do servidor e pode acessar arquivos, banco de dados e etc.</p>
+
+    <p id="sandbox">Sandbox é tipo uma caixa fechada onde o JavaScript roda no navegador, ele não consegue mexer nos arquivos do computador da pessoa nem fazer coisas perigosas, so dentro da pagina.</p>
+
+    <p id="globais">Objetos globais sao objetos que da pra usar em qualquer lugar do codigo, por exemplo o document (que é a pagina), o console (pra mostrar mensagens no console) e o alert (que mostra uma janelinha na tela).</p>
+
+    <p id="hora"></p>
+
+    <script>
+        console.log("Ola, a pagina carregou!")
+        alert("Ola! Seja bem vindo")
+
+        var agora = new Date();
+        document.getElementById("hora").innerHTML = "Hora atual: " + agora.getHours() + ":" + agora.getMinutes() + ":" + agora.getSeconds();
+    </script>
+</body>
+</html>
