@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Teclas</title>
+    <style>
+        #saida {
+            border: 1px solid black;
+            min-height: 50px;
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Captura de Teclas do Teclado</h1>
+    <div id="saida"></div>
+    <p id="codigo"></p>
+
+<script>
+var texto = "";
+
+document.addEventListener("keydown", function(event) {
+    console.log("Tecla: " + event.key + " - Codigo: " + event.code);
+    document.getElementById("codigo").innerHTML = "Ultima tecla: " + event.key + " (" + event.code + ")";
+
+    if (event.key == "Backspace") {
+        texto = texto.substring(0, texto.length - 1);
+    } else if (event.key.length == 1) {
+        texto = texto + event.key;
+    }
+
+    document.getElementById("saida").innerText = texto;
+});
+</script>
+</body>
+</html>
