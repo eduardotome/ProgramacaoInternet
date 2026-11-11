@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tipos de variaveis</title>
+</head>
+<body>
+    <h1>Tipos de Variaveis e Operadores</h1>
+    <button onclick="executar()">Executar</button>
+
+    <h2>Tipos</h2>
+    <p id="pstring"></p>
+    <p id="pnumero"></p>
+    <p id="pboolean"></p>
+    <p id="pundefined"></p>
+    <p id="pnull"></p>
+    <p id="pobjeto"></p>
+    <p id="parray"></p>
+
+    <h2>Operaçoes</h2>
+    <p id="op1"></p>
+    <p id="op2"></p>
+    <p id="op3"></p>
+    <p id="op4"></p>
+    <p id="op5"></p>
+
+<script>
+function executar() {
+    var texto = "Dudu";
+    var numero = 10;
+    var verdadeiro = true;
+    var indefinido;
+    var nulo = null;
+    var objeto = {nome: "Dudu", idade: 19};
+    var vetor = [1, 2, 3];
+
+    document.getElementById("pstring").innerText = "texto = " + texto + " -> tipo: " + typeof texto;
+    document.getElementById("pnumero").innerText = "numero = " + numero + " -> tipo: " + typeof numero;
+    document.getElementById("pboolean").innerText = "verdadeiro = " + verdadeiro + " -> tipo: " + typeof verdadeiro;
+    document.getElementById("pundefined").innerText = "indefinido = " + indefinido + " -> tipo: " + typeof indefinido;
+    document.getElementById("pnull").innerText = "nulo = " + nulo + " -> tipo: " + typeof nulo + " (o null da object, é um erro antigo do javascript)";
+    document.getElementById("pobjeto").innerText = "objeto -> tipo: " + typeof objeto;
+    document.getElementById("parray").innerText = "vetor = " + vetor + " -> tipo: " + typeof vetor + " (array tambem é object)";
+
+    console.log("string + number:", texto + numero);
+    console.log("boolean * number:", verdadeiro * numero);
+    console.log("string * number:", "5" * numero);
+    console.log("null + number:", nulo + numero);
+    console.log("undefined + number:", indefinido + numero);
+
+    document.getElementById("op1").innerText = "\"Dudu\" + 10 = " + (texto + numero) + " -> quando soma string com numero ele junta os dois virando texto";
+    document.getElementById("op2").innerText = "true * 10 = " + (verdadeiro * numero) + " -> o true vira 1 na conta";
+    document.getElementById("op3").innerText = "\"5\" * 10 = " + ("5" * numero) + " -> na multiplicaçao a string vira numero";
+    document.getElementById("op4").innerText = "null + 10 = " + (nulo + numero) + " -> o null vira 0";
+    document.getElementById("op5").innerText = "undefined + 10 = " + (indefinido + numero) + " -> da NaN porque undefined não vira numero";
+}
+</script>
+</body>
+</html>
