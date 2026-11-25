@@ -1,7 +1,7 @@
 <?php
     function hello(){
-    echo "hello &s";
+    echo "Hello";
     return true;
     }
-    hello("bla");
+    hello();
     ?>

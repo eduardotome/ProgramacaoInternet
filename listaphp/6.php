@@ -9,9 +9,9 @@
 <form action="">
 <label for="num">Numero:</label>
 <input name="num" type="number">
+<input type="submit">
 </form>
     <?php
-    $numero = $_GET['num'];
     function ePar($n){
         if($n % 2 == 0){
             echo "é par";
@@ -19,7 +19,11 @@
             echo "é impar";
         }
     }
-    ePar($numero);
+    if(isset($_GET['num'])){
+        $numero = $_GET['num'];
+        echo "O numero $numero ";
+        ePar($numero);
+    }
     ?>
 </body>
 </html>
